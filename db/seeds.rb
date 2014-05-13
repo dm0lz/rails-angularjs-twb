@@ -1,0 +1,8 @@
+Entry.create!(name: "aaa")
+Entry.create!(name: "bbb")
+Entry.create!(name: "ccc")
+Entry.create!(name: "ddd")
+Entry.create!(name: "eee")
+Entry.create!(name: "fff")
+Entry.create!(name: "ggg")
+Entry.create!(name: "hhh")

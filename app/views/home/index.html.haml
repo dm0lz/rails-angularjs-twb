@@ -1,0 +1,19 @@
+%section#wrapper{ "ng-app" => "rails-angularjs-twb" }
+  %section.container
+    %div{ "ng-controller" => "IndexCtrl"} 
+      %h1
+        {{title}}
+      %form{ "ng-submit" => "addEntry()" }
+        %input{ "type" => "text", "ng-model" => "newEntry.name" }
+        %input{ "type" => "submit", "value" => "add", "class" => "btn btn-success" }
+      %ul
+        %li{ "ng-repeat" => "entry in entries"}
+          {{entry.name}}
+          %span{ "ng-show" => "entry.winner", "ng-class" => "{ highlight: entry == lastWinner }"}
+            Winner
+          %button{ "ng-click" => "deleteEntry(entry)", "class" => "btn btn-small btn-danger" }
+            Delete
+
+      %button{ "ng-click" => "drawWinner()", "class" => "btn btn-success"}
+        Draw Winner
+
