@@ -61,7 +61,8 @@ describe Api::V1::EntriesController do
 
     it "fails with empty name" do
       post "create", { entry: {name: ""}}
-      expect(response.body.length).to be == 1
+      res = JSON.parse(response.body)["name"].first
+      expect(res).to eq("can't be blank")
     end
 
   end

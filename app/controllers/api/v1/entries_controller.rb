@@ -13,7 +13,7 @@ class Api::V1::EntriesController < Api::BaseController
     if entry.valid?
       render json: entry, status: 201
     else 
-      render nothing: true, status: 422
+      render json: entry.errors, status: 422
     end
   end
 
